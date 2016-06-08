@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -205,17 +206,14 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
         public void commitFragment() {
             tabbar.removeAllViews();
             for (int i = 0; i < fragmentList.size(); i++) {
-                View view = View.inflate(NavigationBarActivity.this, R.layout.item_tabbar, null);
+                View view = LayoutInflater.from(NavigationBarActivity.this).inflate(R.layout.item_tabbar, null);
+                LinearLayout llTabbarMenu = (LinearLayout) view.findViewById(R.id.ll_tabbar_menu);
+                ImageView ivTabbarIcon = (ImageView) view.findViewById(R.id.iv_tabbar_icon);
+                TextView tvTabbarTitle = (TextView) view.findViewById(R.id.tv_tabbar_title);
+                //ivTabbarIcon.setImageResource(fragmentIcon.get(i));
+                //tvTabbarTitle.setText("dddd");
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1);
                 tabbar.addView(view, lp);
-            }
-            for (int i = 0; i < tabbar.getChildCount(); i++) {
-                View childAt = tabbar.getChildAt(i);
-                LinearLayout llTabbarMenu = (LinearLayout) childAt.findViewById(R.id.ll_tabbar_menu);
-                ImageView ivTabbarIcon = (ImageView) childAt.findViewById(R.id.iv_tabbar_icon);
-                TextView tvTabbarTitle = (TextView) childAt.findViewById(R.id.tv_tabbar_title);
-                //ivTabbarIcon.setImageResource(fragmentIcon.get(i));
-                //tvTabbarTitle.setText(fragmentTitle.get(i));
             }
         }
     }
