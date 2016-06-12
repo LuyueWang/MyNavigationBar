@@ -45,6 +45,8 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
     private List<String> fragmentTitle;
     private List<Integer> fragmentIcon;
 
+    private Fragment nowFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -175,15 +177,6 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
         return null;
     }
 
-    /**
-     * 设置要执行的意图
-     *
-     * @param intent 为null则不打开任何意图
-     */
-    public void setIntent(Intent intent) {
-
-    }
-
     public class ToolbarTextView {
         public static final int LEFT_TEXTVIEW = 0;
         public static final int CENTER_TEXTVIEW = 1;
@@ -210,32 +203,49 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
 
         public void commitFragment() {
             tabbar.removeAllViews();
-            for (int i = 0; i < fragmentList.size(); i++) {
-                //View view = LayoutInflater.from(NavigationBarActivity.this).inflate(R.layout.item_tabbar, null);
-                LinearLayout llTabbarMenu = new LinearLayout(NavigationBarActivity.this);
-                ImageView ivTabbarIcon = new ImageView(NavigationBarActivity.this);
-                TextView tvTabbarTitle = new TextView(NavigationBarActivity.this);
+            if(fragmentList.size() > 0){
+                nowFragment = fragmentList.get(0);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragmentParent,nowFragment).commit();
+            }
+            if(fragmentList.size() > 1){
+                for (int i = 0; i < fragmentList.size(); i++) {
+                    LinearLayout llTabbarMenu = new LinearLayout(NavigationBarActivity.this);
+                    ImageView ivTabbarIcon = new ImageView(NavigationBarActivity.this);
+                    TextView tvTabbarTitle = new TextView(NavigationBarActivity.this);
 
-                LinearLayout.LayoutParams iconLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0,1);
-                llTabbarMenu.addView(ivTabbarIcon,0,iconLp);
-                LinearLayout.LayoutParams titleLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                titleLp.topMargin = UiUtils.dip2px(2);
-                tvTabbarTitle.setTextSize(12);
-                llTabbarMenu.addView(tvTabbarTitle,titleLp);
+                    LinearLayout.LayoutParams iconLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0,1);
+                    llTabbarMenu.addView(ivTabbarIcon,0,iconLp);
+                    LinearLayout.LayoutParams titleLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    titleLp.topMargin = UiUtils.dip2px(2);
+                    tvTabbarTitle.setTextSize(12);
+                    llTabbarMenu.addView(tvTabbarTitle,titleLp);
 
-                ivTabbarIcon.setImageResource(fragmentIcon.get(i));
-                tvTabbarTitle.setText(fragmentTitle.get(i));
+                    ivTabbarIcon.setImageResource(fragmentIcon.get(i));
+                    tvTabbarTitle.setText(fragmentTitle.get(i));
 
-                llTabbarMenu.setOrientation(LinearLayout.VERTICAL);
-                llTabbarMenu.setGravity(Gravity.CENTER);
-                llTabbarMenu.setClickable(true);
-                TypedValue typedValue = new TypedValue();
-                NavigationBarActivity.this.getTheme().resolveAttribute(android.R.attr.selectableItemBackground, typedValue, true);
-                llTabbarMenu.setBackgroundResource(typedValue.resourceId);
-                llTabbarMenu.setPadding(UiUtils.dip2px(4),UiUtils.dip2px(4),UiUtils.dip2px(4),UiUtils.dip2px(4));
+                    llTabbarMenu.setOrientation(LinearLayout.VERTICAL);
+                    llTabbarMenu.setGravity(Gravity.CENTER);
+                    llTabbarMenu.setClickable(true);
+                    TypedValue typedValue = new TypedValue();
+                    NavigationBarActivity.this.getTheme().resolveAttribute(android.R.attr.selectableItemBackground, typedValue, true);
+                    llTabbarMenu.setBackgroundResource(typedValue.resourceId);
+                    llTabbarMenu.setPadding(UiUtils.dip2px(4),UiUtils.dip2px(4),UiUtils.dip2px(4),UiUtils.dip2px(4));
 
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1);
-                tabbar.addView(llTabbarMenu,lp);
+                    final int finalI = i;
+                    llTabbarMenu.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            switchFragment(nowFragment,fragmentList.get(finalI));
+                            nowFragment = fragmentList.get(finalI);
+                        }
+                    });
+
+                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1);
+                    tabbar.addView(llTabbarMenu,lp);
+                }
+            }else {
+                tabbar.setVisibility(View.GONE);
             }
         }
     }

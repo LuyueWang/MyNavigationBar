@@ -7,6 +7,8 @@ import android.view.View;
 
 import com.wonluue.mynavigationbar.NavigationBarActivity;
 import com.wonluue.sample.fragment.OneFragment;
+import com.wonluue.sample.fragment.ThreeFragment;
+import com.wonluue.sample.fragment.TwoFragment;
 
 public class MainActivity extends NavigationBarActivity {
 
@@ -19,8 +21,8 @@ public class MainActivity extends NavigationBarActivity {
 
         fragmentManager = new MyFragmentManager();
         fragmentManager.add(new OneFragment(),"发现",R.mipmap.ic_launcher);
-        fragmentManager.add(new OneFragment(),"理财",R.mipmap.ic_launcher);
-        fragmentManager.add(new OneFragment(),"我的",R.mipmap.ic_launcher);
+        fragmentManager.add(new TwoFragment(),"理财",R.mipmap.ic_launcher);
+        fragmentManager.add(new ThreeFragment(),"我的",R.mipmap.ic_launcher);
         fragmentManager.commitFragment();
     }
 
