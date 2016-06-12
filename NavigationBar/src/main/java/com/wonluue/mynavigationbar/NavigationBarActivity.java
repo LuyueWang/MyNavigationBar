@@ -3,10 +3,14 @@ package com.wonluue.mynavigationbar;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.AttrRes;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +22,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.wonluue.mynavigationbar.utils.UiUtils;
 import com.wonluue.mynavigationbar.utils.WindowsUtils;
 
 import java.util.ArrayList;
@@ -206,14 +211,31 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
         public void commitFragment() {
             tabbar.removeAllViews();
             for (int i = 0; i < fragmentList.size(); i++) {
-                View view = LayoutInflater.from(NavigationBarActivity.this).inflate(R.layout.item_tabbar, null);
-                LinearLayout llTabbarMenu = (LinearLayout) view.findViewById(R.id.ll_tabbar_menu);
-                ImageView ivTabbarIcon = (ImageView) view.findViewById(R.id.iv_tabbar_icon);
-                TextView tvTabbarTitle = (TextView) view.findViewById(R.id.tv_tabbar_title);
-                //ivTabbarIcon.setImageResource(fragmentIcon.get(i));
-                //tvTabbarTitle.setText("dddd");
+                //View view = LayoutInflater.from(NavigationBarActivity.this).inflate(R.layout.item_tabbar, null);
+                LinearLayout llTabbarMenu = new LinearLayout(NavigationBarActivity.this);
+                ImageView ivTabbarIcon = new ImageView(NavigationBarActivity.this);
+                TextView tvTabbarTitle = new TextView(NavigationBarActivity.this);
+
+                LinearLayout.LayoutParams iconLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,0,1);
+                llTabbarMenu.addView(ivTabbarIcon,0,iconLp);
+                LinearLayout.LayoutParams titleLp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                titleLp.topMargin = UiUtils.dip2px(2);
+                tvTabbarTitle.setTextSize(12);
+                llTabbarMenu.addView(tvTabbarTitle,titleLp);
+
+                ivTabbarIcon.setImageResource(fragmentIcon.get(i));
+                tvTabbarTitle.setText(fragmentTitle.get(i));
+
+                llTabbarMenu.setOrientation(LinearLayout.VERTICAL);
+                llTabbarMenu.setGravity(Gravity.CENTER);
+                llTabbarMenu.setClickable(true);
+                TypedValue typedValue = new TypedValue();
+                NavigationBarActivity.this.getTheme().resolveAttribute(android.R.attr.selectableItemBackground, typedValue, true);
+                llTabbarMenu.setBackgroundResource(typedValue.resourceId);
+                llTabbarMenu.setPadding(UiUtils.dip2px(4),UiUtils.dip2px(4),UiUtils.dip2px(4),UiUtils.dip2px(4));
+
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1);
-                tabbar.addView(view, lp);
+                tabbar.addView(llTabbarMenu,lp);
             }
         }
     }

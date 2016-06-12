@@ -15,7 +15,7 @@ public class UiUtils {
      * dp转px
      */
     public static int dip2px(float dpValue) {
-        final float scale = MyApplication.context .getResources().getDisplayMetrics().density;
+        final float scale = MyApplication.mContext.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
 
@@ -23,7 +23,7 @@ public class UiUtils {
      * px转dp
      */
     public static int px2dip(Context ctx, float pxValue) {
-        final float scale = MyApplication.context .getResources().getDisplayMetrics().density;
+        final float scale = MyApplication.mContext.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
 
