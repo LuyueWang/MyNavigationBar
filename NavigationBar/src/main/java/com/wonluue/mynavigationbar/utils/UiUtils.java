@@ -2,6 +2,7 @@ package com.wonluue.mynavigationbar.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
@@ -45,4 +46,29 @@ public class UiUtils {
         return height;
     }
 
+    /**
+     * 显示输入法
+     */
+    public static void showInputMethod(Activity activity) {
+        if(activity != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager)activity.getSystemService("input_method");
+            if(activity.getCurrentFocus() != null) {
+                inputMethodManager.showSoftInput(activity.getCurrentFocus(), 0);
+            }
+
+        }
+    }
+
+    /**
+     * 隐藏输入法
+     */
+    public static void hideInputMethod(Activity activity) {
+        if(activity != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager)activity.getSystemService("input_method");
+            if(activity.getCurrentFocus() != null) {
+                inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+            }
+
+        }
+    }
 }

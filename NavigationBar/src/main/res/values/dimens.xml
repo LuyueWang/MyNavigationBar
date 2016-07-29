@@ -8,4 +8,5 @@
     <dimen name="toolbar_img_padding">10dp</dimen>
     <dimen name="toolbar_img_padding_negative">-10dp</dimen>
     <dimen name="toolbar_text_size">16sp</dimen>
+    <dimen name="toolbar_text_small_size">16sp</dimen>
 </resources>
