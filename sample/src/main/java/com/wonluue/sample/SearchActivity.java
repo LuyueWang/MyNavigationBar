@@ -2,14 +2,21 @@ package com.wonluue.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import com.wonluue.mynavigationbar.activity.LocalActivity;
+import com.wonluue.mynavigationbar.activity.NavigationBarActivity;
 
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends LocalActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+    public View createView() {
+        TextView tv = new TextView(this);
+        tv.setText("ssssssssssssssssss");
+        return tv;
     }
 
 }

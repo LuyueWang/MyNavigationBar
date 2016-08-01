@@ -1,16 +1,10 @@
 package com.wonluue.sample;
 
-import android.app.Fragment;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wonluue.mynavigationbar.activity.NavigationBarActivity;
-import com.wonluue.mynavigationbar.fragment.NavigationSlidingFragment;
-import com.wonluue.sample.fragment.NewLocalFragment;
 import com.wonluue.sample.fragment.OneFragment;
 import com.wonluue.sample.fragment.ThreeFragment;
 import com.wonluue.sample.fragment.TwoFragment;
@@ -24,7 +18,6 @@ public class MainActivity extends NavigationBarActivity implements NavigationBar
     private TextView mTvToolbarRight;// 右侧标题
 
     private ThreeFragment threeFragment;
-    private NavigationSlidingFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +65,7 @@ public class MainActivity extends NavigationBarActivity implements NavigationBar
             case 2:
                 if(1==1){
                     mFragmentManager.setOpenOther(threeFragment);
-                    //startActivity(new Intent(MainActivity.this,SearchActivity.class));
-                    fragment = new NewLocalFragment();
-                    MainActivity.this.getNavigationController().showFragment(fragment, true);
-
+                    startActivity(new Intent(MainActivity.this,SearchActivity.class));
                 }else {
                     mFragmentManager.setOpenDefault();
                 }

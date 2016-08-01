@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#000000</color>
 
+    <color name="colorBackground">#f5f5f5</color>
+
     <color name="color_toolbar_text">#ffffff</color>
     <color name="color_white">#ffffff</color>
     <color name="color_tabbar_bg">#f5f5f5</color>

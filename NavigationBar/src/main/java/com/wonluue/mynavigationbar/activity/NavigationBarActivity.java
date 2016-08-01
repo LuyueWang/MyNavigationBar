@@ -23,7 +23,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.wonluue.mynavigationbar.R;
-import com.wonluue.mynavigationbar.fragment.NavigationController;
 import com.wonluue.mynavigationbar.utils.StatusBarUtil;
 import com.wonluue.mynavigationbar.utils.UiUtils;
 
@@ -59,10 +58,6 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
 
     private OnTabMenuClickListener mOnTabMenuClick;// 当点击tab时监听
 
-    // 声明一个泛型为当前Activity的软引用
-    private static SoftReference<NavigationBarActivity> activitySoftReference;
-
-    private NavigationController mNavigationController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,13 +67,10 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
-        activitySoftReference = new SoftReference<>(this);
         setContentView(R.layout.activity_navigation_bar);
 
         // 加载toolbar布局
         initToolbarView();
-        // 实例化导航控制器
-        mNavigationController = new NavigationController(this);
         //Snackbar.make(view, "替换成自己的动作", Snackbar.LENGTH_LONG).setAction("Action", null).show();
     }
 
@@ -106,7 +98,7 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
 
         toolbarDefault.setPadding(0, StatusBarUtil.getStatusBarHeight(this), 0, 0);
 
-        // 如果系统版本小于5.0
+        // 如果系统版本小于4.4
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
             // 设置tabbar颜色为灰色
             tabbar.setBackgroundColor(getResources().getColor(R.color.color_tabbar_bg));
@@ -222,23 +214,6 @@ public abstract class NavigationBarActivity extends AppCompatActivity {
             return null;
         }
 
-    }
-
-    /**
-     * 获取主场景Activity
-     */
-    public static NavigationBarActivity getMain() {
-        if (activitySoftReference != null) {
-            return activitySoftReference.get();
-        }
-        return null;
-    }
-
-    /**
-     * 获取导航控制器
-     */
-    public NavigationController getNavigationController() {
-        return mNavigationController;
     }
 
     /**
