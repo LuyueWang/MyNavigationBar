@@ -1,5 +1,5 @@
 
-package com.wonluue.mynavigationbar.utils;
+package com.wonluue.mynavigationbar.activity.swipeback;
 
 import android.app.Activity;
 import android.app.ActivityOptions;

@@ -24,11 +24,27 @@
         <item name="shadow_left">@drawable/shadow_left</item>
     </style>
 
-    <style name="SwipeBackTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="SwipeBackTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimaryDark">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="SheetViewAnim">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
+
+    <style name="SheetViewCenterAnim">
+        <item name="android:windowEnterAnimation">@anim/pop_show_center_anim</item>
+        <!-- 指定显示的动画xml -->
+
+        <item name="android:windowExitAnimation">@anim/pop_hidden_center_anim</item>
+        <!-- 指定消失的动画xml -->
     </style>
 
 </resources>

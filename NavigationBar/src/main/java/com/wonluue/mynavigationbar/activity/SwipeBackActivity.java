@@ -2,14 +2,13 @@
 package com.wonluue.mynavigationbar.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.wonluue.mynavigationbar.activity.swipeback.SwipeBackActivityBase;
 import com.wonluue.mynavigationbar.activity.swipeback.SwipeBackActivityHelper;
 import com.wonluue.mynavigationbar.activity.swipeback.SwipeBackLayout;
-import com.wonluue.mynavigationbar.utils.Utils;
+import com.wonluue.mynavigationbar.activity.swipeback.Utils;
 
 
 class SwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {

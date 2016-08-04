@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.wonluue.mynavigationbar.R;
-import com.wonluue.mynavigationbar.utils.Utils;
 
 /**
  * @author Yrom

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/color_white"
+        app:cardCornerRadius="6dp"
+        app:contentPaddingBottom="0dp"
+        app:contentPaddingTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="24dp">
+
+                <TextView
+                    android:id="@+id/tv_sheet_view_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:gravity="center"
+                    android:text="Title"
+                    android:textColor="@color/color_sheet_view_title"
+                    android:visibility="gone"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/line_in_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#ddd"
+                    android:visibility="gone"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_sheet_view_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+                    <TextView
+                        android:id="@+id/tv_sheet_view_msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:layout_marginBottom="24dp"
+                        android:visibility="gone"
+                        android:text="you can show any text"
+                        android:textColor="@color/color_sheet_view_msg"
+                        android:textSize="14sp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sheet_view_do"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#ddd" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_sheet_view_do_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_sheet_view_cancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="cancel"
+                        android:textColor="@color/color_sheet_view_cancel"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:id="@+id/view_sheet_view_line"
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="#ddd" />
+
+                    <TextView
+                        android:id="@+id/tv_sheet_view_sure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="sure"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:textColor="@color/color_sheet_view_sure"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</FrameLayout>
