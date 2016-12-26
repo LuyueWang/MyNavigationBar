@@ -17,7 +17,7 @@
             android:id="@+id/pb_load_page"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="3dp"
+            android:layout_height="2dp"
             android:progressDrawable="@drawable/progressbar_color" />
 
         <TextView

@@ -44,4 +44,10 @@
         android:text="打开单选弹窗"
         android:onClick="showRadioListSheetView"
         android:id="@+id/button5" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开加载框"
+        android:onClick="showProgressSheetView"
+        android:id="@+id/button6" />
 </LinearLayout>

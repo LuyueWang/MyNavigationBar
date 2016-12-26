@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_default"
+    app:elevation="3dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -52,6 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:cropToPadding="true"
                 android:textColor="@color/color_toolbar_text"
                 android:textSize="@dimen/toolbar_text_size"
                 android:textStyle="bold"
@@ -67,10 +70,13 @@
 
             <ImageView
                 android:id="@+id/iv_toolbar_right_img"
-                android:layout_width="@dimen/toolbar_height_size"
-                android:layout_height="match_parent"
+                android:layout_width="@dimen/toolbar_img_size"
+                android:layout_height="@dimen/toolbar_img_size"
                 android:padding="@dimen/toolbar_img_padding"
+                style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
                 android:src="@mipmap/ic_launcher"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
                 android:visibility="gone" />
 
             <TextView
@@ -79,6 +85,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/toolbar_img_padding"
                 android:gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:textColor="@color/color_toolbar_text"
                 android:textSize="@dimen/toolbar_text_small_size"
                 android:visibility="gone" />

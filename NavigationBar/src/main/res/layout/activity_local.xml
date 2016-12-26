@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
-    android:background="@color/colorBackground"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <include
@@ -13,6 +13,43 @@
         android:id="@+id/local_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_back"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/toolbar_height_size"
+                android:layout_gravity="left|center"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_back_img"
+                    style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+                    android:layout_width="@dimen/toolbar_img_size"
+                    android:layout_height="@dimen/toolbar_img_size"
+                    android:layout_gravity="center_vertical"
+                    android:cropToPadding="true"
+                    android:padding="@dimen/toolbar_img_padding"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tv_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="-10dp"
+                    android:gravity="center"
+                    android:textColor="@color/color_toolbar_text"
+                    android:textSize="@dimen/toolbar_text_size"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </FrameLayout>
     </FrameLayout>
 
 

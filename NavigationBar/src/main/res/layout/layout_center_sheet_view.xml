@@ -22,16 +22,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="24dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_sheet_view_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
                     android:paddingLeft="32dp"
                     android:paddingRight="32dp"
+                    android:layout_marginTop="24dp"
                     android:gravity="center"
                     android:text="Title"
                     android:textColor="@color/color_sheet_view_title"
@@ -42,6 +41,7 @@
                     android:id="@+id/line_in_title"
                     android:layout_width="match_parent"
                     android:layout_height="1px"
+                    android:layout_marginTop="16dp"
                     android:background="#ddd"
                     android:visibility="gone"/>
 
@@ -57,6 +57,7 @@
                         android:gravity="left"
                         android:paddingLeft="32dp"
                         android:paddingRight="32dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginBottom="24dp"
                         android:visibility="gone"
                         android:text="you can show any text"

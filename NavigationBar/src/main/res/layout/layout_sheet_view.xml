@@ -11,6 +11,7 @@
         android:layout_margin="8dp"
         android:background="@color/color_white"
         app:cardCornerRadius="6dp"
+        app:cardElevation="10dp"
         app:contentPaddingBottom="0dp"
         app:contentPaddingTop="0dp">
 
@@ -22,16 +23,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="24dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_sheet_view_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
                     android:paddingLeft="32dp"
                     android:paddingRight="32dp"
+                    android:layout_marginTop="24dp"
                     android:gravity="center"
                     android:text="Title"
                     android:textColor="@color/color_sheet_view_title"
@@ -43,6 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1px"
                     android:background="#ddd"
+                    android:layout_marginTop="16dp"
                     android:visibility="gone"/>
 
                 <FrameLayout
@@ -57,6 +58,7 @@
                         android:gravity="left"
                         android:paddingLeft="32dp"
                         android:paddingRight="32dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginBottom="24dp"
                         android:visibility="gone"
                         android:text="you can show any text"
