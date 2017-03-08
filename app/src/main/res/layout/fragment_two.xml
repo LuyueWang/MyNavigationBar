@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    tools:context=".TestLocalActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="openDarkTip"
+                android:text="打开暗色提示" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="openLightTip"
+                android:text="打开亮色提示" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="showSheetView"
+                android:text="打开默认弹窗" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="showDiySheetView"
+                android:text="打开自定义弹窗" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="showTextListSheetView"
+                android:text="打开文本弹窗" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="showRadioListSheetView"
+                android:text="打开单选弹窗" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="showProgressSheetView"
+                android:text="打开加载框" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="openDarkNotify"
+                android:text="打开暗色通知" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="openLightNotify"
+                android:text="打开亮色通知" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/color_white"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="openDeafultNotify"
+                android:text="打开默认通知" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/ll_notify_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height_size"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp">
+
+        <ImageView
+            android:id="@+id/iv_tip_view_icon"
+            android:layout_width="@dimen/toolbar_img_size"
+            android:layout_height="@dimen/toolbar_img_size"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_tip_view_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="you can show text"
+            android:textColor="@color/color_sheet_view_msg"
+            android:textSize="14sp" />
+    </LinearLayout>
+</FrameLayout>

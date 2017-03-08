@@ -1,1 +1,1 @@
-include ':NavigationBar', ':sample'
+include ':NavigationBar', ':app'
